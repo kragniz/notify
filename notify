@@ -8,4 +8,8 @@ push (@matches,$&) while($string =~ /#Lecture (\d)+/g );
 @matches[-1] =~ m/(\d+)$/;
 $lecture = int($1) + 1;
 $date = `date`;
-print "#Lecture $lecture - $date";
+$title = "#Lecture $lecture - $date";
+
+system("echo \"$title\" >> notes.md");
+system("vim + notes.md");
+system("git add notes.md");
