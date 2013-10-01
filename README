@@ -1,0 +1,15 @@
+Notify
+======
+
+Add the number and date of a lecture to the end of a file, edit it with vim and
+then add it to the git index.
+
+Usage
+=====
+
+    $ notify cs404/notes.md
+
+Install
+=======
+
+    $ ./install
