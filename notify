@@ -1,6 +1,12 @@
 #!/usr/bin/env perl
 
-open my $fh, '<', "notes.md";
+my ($filename) = @ARGV;
+if (length($filename) < 1) {
+    print "No arguments given. Please specify the file to edit\n";
+    exit();
+}
+
+open my $fh, '<', $filename;
 read $fh, my $string, -s $fh;
 close $fh;
 
@@ -10,6 +16,6 @@ $lecture = int($1) + 1;
 $date = `date`;
 $title = "#Lecture $lecture - $date";
 
-system("echo \"$title\" >> notes.md");
-system("vim + notes.md");
-system("git add notes.md");
+system("echo \"$title\" >> $filename");
+system("vim + $filename");
+system("git add $filename");
