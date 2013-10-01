@@ -1,0 +1,8 @@
+#!/usr/bin/env perl
+
+open my $fh, '<', "notes.md";
+read $fh, my $string, -s $fh;
+close $fh;
+
+push (@matches,$&) while($string =~ /#Lecture (\d)+/g );
+print @matches[-1]
