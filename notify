@@ -5,4 +5,7 @@ read $fh, my $string, -s $fh;
 close $fh;
 
 push (@matches,$&) while($string =~ /#Lecture (\d)+/g );
-print @matches[-1]
+@matches[-1] =~ m/(\d+)$/;
+$lecture = int($1) + 1;
+$date = `date`;
+print "#Lecture $lecture - $date";
