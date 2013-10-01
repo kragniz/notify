@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp -va notify /usr/local/bin/
