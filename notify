@@ -1,10 +1,17 @@
 #!/usr/bin/env perl
 
-my ($filename) = @ARGV;
-if (length($filename) < 1) {
+my ($arg) = @ARGV;
+if (length($arg) < 1) {
     print "No arguments given. Please specify the file to edit\n";
     exit();
 }
+
+if ($arg =~ /^todo$/) {
+    system("grep \"TODO\" cs*/notes.md");
+    exit();
+}
+
+$filename = $arg;
 
 open my $fh, '<', $filename;
 read $fh, my $string, -s $fh;
