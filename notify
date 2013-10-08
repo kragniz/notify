@@ -21,7 +21,7 @@ push (@matches,$&) while($string =~ /#Lecture (\d)+/g );
 @matches[-1] =~ m/(\d+)$/;
 $lecture = int($1) + 1;
 $date = `date`;
-$title = "#Lecture $lecture - $date";
+$title = "\n#Lecture $lecture - $date";
 
 system("echo \"$title\" >> $filename");
 system("vim + $filename");
