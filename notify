@@ -21,9 +21,9 @@ push (@matches,$&) while($string =~ /#Lecture (\d)+/g );
 @matches[-1] =~ m/(\d+)$/;
 $lecture = int($1) + 1;
 $date = `date`;
-$title = "\n#Lecture $lecture - $date";
+$title = "#Lecture $lecture - $date";
 
-system("echo \"$title\" >> $filename");
+system("echo \"\n$title\" >> $filename");
 system("vim + $filename");
 system("git add $filename");
 system("git commit -m $title");
