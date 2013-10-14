@@ -11,7 +11,7 @@ if ($arg =~ /^todo$/) {
     exit();
 }
 
-$filename = $arg;
+$filename = "$arg/notes.md";
 
 open my $fh, '<', $filename;
 read $fh, my $string, -s $fh;
