@@ -7,7 +7,7 @@ if (length($arg) < 1) {
 }
 
 if ($arg =~ /^todo$/) {
-    system("grep \"TODO\" cs*/notes.md");
+    system("grep --color \"TODO\" cs*/notes.md");
     exit();
 }
 
