@@ -25,3 +25,4 @@ $title = "#Lecture $lecture - $date";
 
 system("echo \"\n$title\" >> $filename");
 system("vim + $filename");
+system("git add \"$filename\"");
